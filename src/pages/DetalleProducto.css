@@ -1,0 +1,96 @@
+/* Contenedor general */
+.detalle-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, #fff, #f9f9f9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Título */
+  .detalle-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Descripción */
+  .detalle-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  /* Imagen */
+  .detalle-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Precio y stock */
+  .detalle-price {
+    font-weight: bold;
+    color: darkgreen;
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .detalle-stock {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón de volver */
+  .detalle-button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .detalle-button:hover {
+    background-color: darkgreen;
+  }
+  
+  /* Estilos para ItemCount */
+  .item-count-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .item-count-button {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .item-count-button:hover {
+    background-color: darkgreen;
+  }
+  
+  .item-count-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  

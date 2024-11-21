@@ -1,23 +1,39 @@
-import Logo from "./Logo";
+import React from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
+import Logo from "./Logo"; // Componente Logo
+import "./NavBar.css"; // Estilos del NavBar
 
-function Navbar () {
-    return (
-        <nav className="navbar">
-            <Logo />
-            <div>
-            <ul className="nav-menu">
-                <li><a href=""> Inicio</a></li>
-                <li><a href=""> Vestimenta</a></li>
-                <li><a href=""> Calzados</a></li>
-            </ul>
-            </div>
-            <CartWidget />
+const NavBar = () => {
+  return (
+    <nav className="navbar">
+      {/* Logo */}
+      <Link to="/">
+        <Logo />
+      </Link>
 
-        </nav>
-    );
+      {/* Menú */}
+      <ul className="nav-menu">
+        <li>
+          <Link to="/">Inicio</Link>
+        </li>
+        <li>
+          <Link to="/productos">Productos</Link>
+        </li>
+        <li>
+          <Link to="/quienes">Quiénes Somos</Link>
+        </li>
+        <li>
+          <Link to="/contacto">Contacto</Link>
+        </li>
+      </ul>
+
+      {/* CartWidget */}
+      <CartWidget />
+    </nav>
+  );
+};
+
+export default NavBar;
 
 
-}
-
-export default Navbar;

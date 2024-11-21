@@ -6,7 +6,7 @@ function ItemListContainer({ greeting }) {
         <h1>{greeting} </h1>
         <br />
         
-        <ItemCount stock={10} initial={5} onAdd={(count) => console.log(`Cantidad añadida: ${count}`)} />
+        {/* <ItemCount stock={10} initial={5} onAdd={(count) => console.log(`Cantidad añadida: ${count}`)} /> */}
       </div>
 
 

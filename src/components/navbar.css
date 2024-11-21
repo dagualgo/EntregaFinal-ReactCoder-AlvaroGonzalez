@@ -23,26 +23,24 @@ body, html {
 
   .nav-menu {
     display: flex;
-    font-size: 2rem;
-    flex-grow: 1; /* Permite que el menú ocupe espacio adicional */
+    font-size: 1.5rem;
+    flex-grow: 1;
     list-style: none;
-    gap: 20px; 
+    gap: 20px;
+    font-family: 'Source Code Pro', monospace; /* Fuente de máquina de escribir */
   }
   
   .nav-menu a:hover {
-    color: black; 
-    -webkit-text-stroke: 1px lightsalmon; /* Grosor y color del contorno */
-    padding: 5px;
+    color: lightgreen; /* Color del texto */
+    -webkit-text-stroke: 1px black; /* Contorno negro */
+    text-shadow: 0 0 5px rgba(46, 204, 113, 0.8); /* Sombra con brillo verde */
+    font-weight: bold; /* Opcional: resaltar más el texto */
   }
-
+  
   .nav-menu a {
     color: black;
     text-decoration: none;
   }
-
-
-
-
 
 
 .logo img {
@@ -50,6 +48,12 @@ body, html {
   height: 100px;
   padding: 10px,10px,10px, 40px;
   border-radius: 50px;
+ 
+}
+
+
+.logo :hover {
+  border: 1px solid darkgreen;
 }
 
 

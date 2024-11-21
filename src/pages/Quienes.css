@@ -1,0 +1,56 @@
+/* Contenedor general */
+.quienes-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #fff, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contenedor de contenido (horizontal) */
+  .quienes-content {
+    display: flex;
+    flex-wrap: wrap; /* Se adapta en pantallas más pequeñas */
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Sección de texto */
+  .quienes-text {
+    flex: 1; /* Ocupa el 50% */
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .quienes-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .quienes-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  /* Sección de imágenes */
+  .quienes-images {
+    flex: 1; /* Ocupa el 50% */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .quienes-main-image,
+  .quienes-logo-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
