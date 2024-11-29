@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "./CartWidget";
-import Logo from "./Logo"; // Componente Logo
+import CartWidget from "../CartWidget";
+import Logo from "../Logo"; // Componente Logo
 import "./NavBar.css"; // Estilos del NavBar
 
 const NavBar = () => {
@@ -15,10 +15,10 @@ const NavBar = () => {
       {/* Menú */}
       <ul className="nav-menu">
         <li>
-          <Link to="/">Inicio</Link>
+          <Link to="/home">Inicio</Link>
         </li>
         <li>
-          <Link to="/productos">Productos</Link>
+        <Link to="/">Productos</Link>
         </li>
         <li>
           <Link to="/quienes">Quiénes Somos</Link>

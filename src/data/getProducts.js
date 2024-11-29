@@ -122,5 +122,11 @@ const products = [
     },
   ];
   
-  export default products;
+  const getProducts = () => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(products), 1000); // Simula un retraso de 1 segundo.
+    });
+};
+
+export default getProducts;
   
