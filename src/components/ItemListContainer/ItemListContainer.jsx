@@ -1,59 +1,43 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase"; // Conexión a Firebase
+import FilterButtons from "./FilterButtons";
 import ItemList from "./ItemList";
-import getProducts from "../../data/getProducts";
 import "./ItemListContainer.css";
 
 const ItemListContainer = () => {
-    const { categoryId } = useParams();
-    const [productos, setProductos] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [tipo, setTipo] = useState(""); // Nueva lógica para filtrar por "men", "women" o "todos".
+  const [products, setProducts] = useState([]);
+  const [filter, setFilter] = useState("all");
 
-    useEffect(() => {
-        const fetchProductos = async () => {
-            setLoading(true);
-            try {
-                const allProducts = await getProducts();
-                // Filtra productos según el tipo seleccionado.
-                const filteredProducts = tipo
-                    ? allProducts.filter(prod => prod.category === tipo)
-                    : allProducts;
-                setProductos(filteredProducts);
-            } catch (error) {
-                console.error("Error al cargar productos:", error);
-                setProductos([]);
-            } finally {
-                setLoading(false);
-            }
-        };
+  useEffect(() => {
+    
 
-        fetchProductos();
-    }, [tipo, categoryId]); // Ejecuta cada vez que cambia el tipo o la categoría.
+    const fetchData = async () => {
+        console.log("Iniciando fetch desde Firebase...");
+      try {
+        const querySnapshot = await getDocs(collection(db, "items"));
+        const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        console.log("Datos de Firestore:", data); // Asegúrate de que esto esté aquí
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        console.error("Error al obtener los datos:", error);
+      }
+    };
 
-    if (loading) {
-        return <p className="productos-title">Cargando productos...</p>;
-    }
+    fetchData();
+  }, []);
 
-    if (!productos.length) {
-        return <p className="productos-title">No hay productos disponibles.</p>;
-    }
+  const filteredProducts = filter === "all"
+    ? products
+    : products.filter(product => product.category === filter);
 
-    return (
-        <div className="productos-container">
-            <h1 className="productos-title">
-                Productos para {tipo === "men" ? "Hombres" : tipo === "women" ? "Mujeres" : "Todos"}
-            </h1>
-            <div className="productos-buttons">
-                <button onClick={() => setTipo("")}>Todos</button>
-                <button onClick={() => setTipo("men")}>Hombres</button>
-                <button onClick={() => setTipo("women")}>Mujeres</button>
-            </div>
-            <div className="productos-grid">
-                <ItemList products={productos} />
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <FilterButtons setFilter={setFilter} />
+      <ItemList products={filteredProducts} />
+    </div>
+  );
 };
 
 export default ItemListContainer;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget";
 import Logo from "../Logo"; // Componente Logo
 import "./NavBar.css"; // Estilos del NavBar
+import ConnectionIndicator from "./ConnectionIndicator";
 
 const NavBar = () => {
   return (
@@ -10,10 +11,14 @@ const NavBar = () => {
       {/* Logo */}
       <Link to="/">
         <Logo />
+      
       </Link>
 
       {/* Menú */}
       <ul className="nav-menu">
+        <li>
+          <ConnectionIndicator />
+        </li>
         <li>
           <Link to="/home">Inicio</Link>
         </li>
@@ -30,6 +35,7 @@ const NavBar = () => {
 
       {/* CartWidget */}
       <CartWidget />
+    
     </nav>
   );
 };
