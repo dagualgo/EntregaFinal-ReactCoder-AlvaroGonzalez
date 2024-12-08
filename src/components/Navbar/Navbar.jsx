@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "../CartWidget";
+import CartWidget from "../cart/CartWidget";
 import Logo from "../Logo"; // Componente Logo
 import "./NavBar.css"; // Estilos del NavBar
 import ConnectionIndicator from "./ConnectionIndicator";
