@@ -1,16 +1,20 @@
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
-//import "../Navbar/navbar.css";
-import "../Navbar/Navbar.css"
+import "./CartWidget.css";
 
-function CartWidget() {
+const CartWidget = () => {
+  const { totalQuantity } = useContext(CartContext);
+
   return (
-    <div className="carrito">
-      <a href="#">
-        <FaShoppingCart size="60px" className="icon-cart" />
-      </a>
-      <span className="badge">5</span> {/* Numero hardcodeado */}
-    </div>
+    <Link to="/cart" className="carrito">
+      <FaShoppingCart size="60px" className="icon-cart" />
+      <span className="badge">{totalQuantity || 0}</span> {/* Siempre muestra el 0 si no hay productos */}
+      
+    </Link>
   );
-}
+};
 
 export default CartWidget;
+

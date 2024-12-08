@@ -1,0 +1,30 @@
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 150px;
+    background-color: #ee7787;
+    color: white;
+    font-size: 1 rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+  
+  .carrito {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding-right: 140px;
+    }
+  
+    
+    
+    .icon-cart {
+      color: black; 
+      transition: color 0.3s;
+    }
+    
+    .icon-cart:hover {
+      color: darkgreen;
+    }
+    
