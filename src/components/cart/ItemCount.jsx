@@ -1,18 +1,24 @@
-// ejercicio no obligatorio
 import React, { useState } from "react";
+//import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, onAdd, onUpdate }) => {
   const [count, setCount] = useState(initial);
 
   const handleIncrement = () => {
     if (count < stock) {
       setCount(count + 1);
+      if (onUpdate) {
+        onUpdate(count + 1); // Notificamos al carrito
+      }
     }
   };
 
   const handleDecrement = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
+      if (onUpdate) {
+        onUpdate(count - 1); // Notificamos al carrito
+      }
     }
   };
 
@@ -25,9 +31,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       <button className="item-count-button" onClick={handleIncrement}>
         +
       </button>
-      <button className="item-count-button" onClick={() => onAdd(count)}>
-        Agregar al carrito
-      </button>
+      {onAdd && (
+        <button className="item-count-button" onClick={() => onAdd(count)}>
+          Agregar al carrito
+        </button>
+      )}
     </div>
   );
 };
