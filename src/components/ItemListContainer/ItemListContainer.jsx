@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase"; // Conexión a Firebase
+import { db } from "../../firebase";
 import FilterButtons from "./FilterButtons";
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";
@@ -17,7 +17,7 @@ const ItemListContainer = () => {
       try {
         const querySnapshot = await getDocs(collection(db, "items"));
         const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        console.log("Datos de Firestore:", data); // Asegúrate de que esto esté aquí
+        console.log("Datos de Firestore:", data);
         setProducts(data);
       } catch (error) {
         console.error("Error fetching data:", error);

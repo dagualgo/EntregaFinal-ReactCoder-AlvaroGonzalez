@@ -1,6 +1,6 @@
 /* Contenedor general */
 .detalle-container {
-    padding: 20px;
+    padding: 15px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -13,7 +13,7 @@
   .detalle-title {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     font-family: 'Courier New', monospace;
   }
   
@@ -21,15 +21,16 @@
   .detalle-description {
     font-size: 1.2rem;
     color: #555;
-    margin: 10px 0;
+    margin: 4px 0;
   }
   
   /* Imagen */
   .detalle-image {
     width: 100%;
     max-width: 300px;
+    height: 375 px;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
@@ -38,18 +39,18 @@
     font-weight: bold;
     color: darkgreen;
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin: 3px 0;
   }
   
   .detalle-stock {
     font-size: 1rem;
     color: #888;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
   }
   
   /* Botón de volver */
   .detalle-button {
-    padding: 10px 15px;
+    padding: 6px 15px;
     font-size: 1rem;
     color: white;
     background-color: #333;
@@ -69,7 +70,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: center;
   }
   

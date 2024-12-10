@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
@@ -8,6 +9,7 @@ const Checkout = () => {
   const { cartItems, totalCost, clearCart } = useContext(CartContext);
   const [buyerInfo, setBuyerInfo] = useState({ name: "", email: "", phone: "" });
   const [orderId, setOrderId] = useState("");
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +37,7 @@ const Checkout = () => {
     try {
       const docRef = await addDoc(collection(db, "orders"), order);
       setOrderId(docRef.id);
-      clearCart(); // Vacío carrito después de comprar
+      clearCart();
       console.log("Orden creada con ID:", docRef.id);
     } catch (error) {
       console.error("Error al crear la orden:", error);
@@ -84,9 +86,11 @@ const Checkout = () => {
 
       {orderId && (
         <p className="success-message">
-          ¡Gracias por tu compra! Tu ID de orden es: <strong>{orderId}</strong>
+          ¡Gracias por tu compra! <br /> Tu ID de orden es:  <strong>{orderId}</strong>
         </p>
       )}
+      <button onClick={() => navigate(orderId ? "/" : -1)} className="product-detail-button">Volver </button>
+
     </div>
   );
 };

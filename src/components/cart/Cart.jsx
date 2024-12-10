@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="cart">
+        <div className="cart">
       <h2>Carrito</h2>
       <ul>
         {cartItems.map((item) => (
@@ -43,19 +43,15 @@ const Cart = () => {
           </li>
         ))}
       </ul>
-      </div>
+        </div>
 
-      <div className="cart-actions">
+        <div className="cart-actions">
           <h3>Total: ${totalCost}</h3>
           <div>
             <button className="cart-clear" onClick={clearCart}>Vaciar carrito</button>
             <button className="cart-checkout" onClick={() => navigate('/checkout')}>Finalizar Compra</button>
         </div>
-</div>
-
-
-
-
+        </div>
 
     </div>
 

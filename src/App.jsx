@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Quienes from "./pages/Quienes";
 import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
-import DebugDataView from "./components/ItemDetailContainer/DebugDataView";
+
 
 function App() {
   return (
@@ -28,7 +28,6 @@ function App() {
           <Route path="/quienes" element={<Quienes />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/debug/:id" element={<DebugDataView />} />
         </Routes>
       </Router>
     </CartProvider>

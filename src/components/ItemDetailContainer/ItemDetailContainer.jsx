@@ -18,13 +18,13 @@ const ItemDetailContainer = () => {
     const fetchProduct = async () => {
       try {
         console.log("ID recibido para consultar en Firestore:", id);
-        const docRef = doc(db, "items", id); // Referencia al documento
-        const docSnap = await getDoc(docRef); // Obtener el documento
+        const docRef = doc(db, "items", id);
+        const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
           const productData = { id: docSnap.id, ...docSnap.data() };
           console.log("Producto encontrado en Firebase:", productData);
-          setProduct(productData); // Guardar producto en el estado
+          setProduct(productData);
         } else {
           console.error("Producto no encontrado en Firebase");
         }

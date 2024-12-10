@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase"; // Ajusta la ruta según tu proyecto
+import { db } from "../../firebase";
 
 const ConnectionIndicator = () => {
   const [isConnected, setIsConnected] = useState(true);
